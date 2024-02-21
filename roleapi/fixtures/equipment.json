@@ -1,0 +1,23 @@
+[
+  {
+    "model": "roleapi.equipment",
+    "pk": 1,
+    "fields": {
+      "name": "Tilt-A-Whirl"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 2,
+    "fields": {
+      "name": "Cotton Candy Machine"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 3,
+    "fields": {
+      "name": "Ferris Wheel"
+    }
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "model": "roleapi.role",
+    "pk": 1,
+    "fields": {
+      "name": "Cotton Candy Operator",
+      "description": "As the Cotton Candy Operator, your responsibilities include operating and maintaining the Cotton Candy Machine at our carnival. You'll be spinning sugary delights, ensuring the machine's proper functioning, and creating delightful cotton candy treats for our visitors. You'll collaborate with the Ringmaster and other team members to bring sweetness and joy to our carnival-goers.",
+      "boss": "Ringmaster",
+      "equipment": 1,
+      "user": 1
+    }
+  },
+  {
+    "model": "roleapi.role",
+    "pk": 2,
+    "fields": {
+      "name": "Ferris Wheel Technician",
+      "description": "As the Ferris Wheel Technician, your role is crucial in ensuring smooth and safe rides for our carnival guests. You'll be responsible for inspecting, maintaining, and repairing the Ferris Wheel equipment. Collaborating with the Carnival Manager, you'll conduct regular safety checks, troubleshoot technical issues, and contribute to creating a delightful and secure experience for everyone enjoying the carnival.",
+      "boss": "Carnival Manager",
+      "equipment": 2,
+      "user": 2
+    }
+  },
+  {
+    "model": "roleapi.role",
+    "pk": 3,
+    "fields": {
+      "name": "Tilt-A-Whirl Supervisor",
+      "description": "As the Tilt-A-Whirl Supervisor, you play a key role in overseeing the thrilling spins and ensuring the safety of carnival-goers on the Tilt-A-Whirl attraction. Your responsibilities include supervising ride operators, implementing safety protocols, and coordinating with the Attractions Director to enhance the overall experience. You'll be involved in training staff, managing ride queues, and contributing to the success of this exciting carnival ride.",
+      "boss": "Attractions Director",
+      "equipment": 3,
+      "user": 3
+    }
+  }
+]
