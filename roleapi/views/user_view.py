@@ -20,7 +20,7 @@ class UserView(ViewSet):
             return Response({'message': ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
 
     def update(self, request, pk):
-        """Handle PUT requests for an tour
+        """Handle PUT requests for an role
         Returns: Response -- Empty body with 204 status code"""
 
         try:

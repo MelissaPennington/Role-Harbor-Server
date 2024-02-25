@@ -10,14 +10,77 @@
     "model": "roleapi.equipment",
     "pk": 2,
     "fields": {
-      "name": "Cotton Candy Machine"
+      "name": "Roller Coaster"
     }
   },
   {
     "model": "roleapi.equipment",
     "pk": 3,
     "fields": {
-      "name": "Ferris Wheel"
+      "name": "Carousel"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 4,
+    "fields": {
+      "name": "Bumper Cars"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 5,
+    "fields": {
+      "name": "Haunted House"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 6,
+    "fields": {
+      "name": "Ring Toss"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 7,
+    "fields": {
+      "name": "Whack-a-Mole"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 8,
+    "fields": {
+      "name": "Duck Pond"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 9,
+    "fields": {
+      "name": "Balloon Darts"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 10,
+    "fields": {
+      "name": "Hot Dog Stand"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 11,
+    "fields": {
+      "name": "Cotton Candy Machine"
+    }
+  },
+  {
+    "model": "roleapi.equipment",
+    "pk": 12,
+    "fields": {
+      "name": "Corn Dog Deep Fryer "
     }
   }
 ]
