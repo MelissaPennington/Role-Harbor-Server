@@ -1,0 +1,23 @@
+[
+  {
+    "model": "roleapi.organization",
+    "pk": 1,
+    "fields": {
+      "name": "Carnival Delights"
+    }
+  },
+  {
+    "model": "roleapi.organization",
+    "pk": 2,
+    "fields": {
+      "name": "Joyful Rides"
+    }
+  },
+  {
+    "model": "roleapi.organization",
+    "pk": 3,
+    "fields": {
+      "name": "Sweet Treats Circus"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "model": "roleapi.organizationrole",
+    "pk": 1,
+    "fields": {
+      "organization": 1,
+      "role": 1
+    }
+  },
+  {
+    "model": "roleapi.organizationrole",
+    "pk": 2,
+    "fields": {
+      "organization": 2,
+      "role": 2
+    }
+  },
+  {
+    "model": "roleapi.organizationrole",
+    "pk": 3,
+    "fields": {
+      "organization": 3,
+      "role": 3
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "model": "roleapi.user",
+    "pk": 1,
+    "fields": {
+      "username": "candy_clown",
+      "uid": "CC123"
+    }
+  },
+  {
+    "model": "roleapi.user",
+    "pk": 2,
+    "fields": {
+      "username": "carousel_charlie",
+      "uid": "CC456"
+    }
+  },
+  {
+    "model": "roleapi.user",
+    "pk": 3,
+    "fields": {
+      "username": "funnel_cake_frank",
+      "uid": "FC789"
+    }
+  }
+]
