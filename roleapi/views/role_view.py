@@ -69,9 +69,6 @@ class RoleView(ViewSet):
             user = User.objects.get(id=request.data["user"])
             equipment = Equipment.objects.get(id=request.data["equipment"])
 
-            user = User.objects.get(id=user_id)
-            equipment = Equipment.objects.get(id=equipment_id)
-
             role = Role.objects.create(
                 user=user,
                 name=request.data["name"],
@@ -112,10 +109,8 @@ class RoleView(ViewSet):
                 for organization_role in existing_organization_roles:
                     organization_role.delete()
                 for organization_id in request.data['organizationRoles']:
-                    new_organization = Organization.objects.get(
-                        id=organization_id)
-                    OrganizationRole.objects.create(
-                        role=role, organization=new_organization)
+                    new_organization = Organization.objects.get(id=organization_id)
+                    OrganizationRole.objects.create(role=role, organization=new_organization)
 
             role.save()
 
