@@ -27,8 +27,9 @@ class RoleView(ViewSet):
     def list(self, request):
         try:
             user_id = request.query_params.get('userId', None)
+            roles = ""
 
-            if user_id is not None:
+            if user_id is not None and user_id != 'undefined':
                 user = User.objects.get(id=user_id)
                 roles = Role.objects.filter(user_id=user)
             else:
@@ -37,30 +38,11 @@ class RoleView(ViewSet):
             serializer = RoleSerializer(roles, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
+        except User.DoesNotExist:
+            return Response({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
         except Exception as e:
             return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    # def list(self, request):
-    #     """Handle GET requests to get all roless.
-    #     Returns: Response -- JSON serialized list of roless"""
-    #     try:
-    #         roles = roles.objects.all()
-    #         serializer = RolesSerializer(roless, many=True)
-    #         return Response(serializer.data)
-    #     except Exception as e:
-    #         return Response({'message': f'An error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-    # def list(self, request):
-    #     roles =Role.objects.all()
-
-    #     user = request.query_parms.get('userId', None)
-    #     role = request.query_parms.get('roleId', None)
-
-    #     if request.query_parms.get('completed', None) is not None and user is not None:
-    #         roles = Role.objects.filter(complete = 'True', user_id = user)
-
-    #     serializer = RoleSerializer(roles, many=True)
-    #     return Response(serializer.data, status.HTTP_200_OK)
 
     def create(self, request):
         """Handle POST operations
@@ -71,14 +53,15 @@ class RoleView(ViewSet):
 
             role = Role.objects.create(
                 user=user,
+                image=request.data["image"],
                 name=request.data["name"],
                 description=request.data["description"],
                 boss=request.data["boss"],
                 equipment=equipment,
             )
 
-            if request.data['organizationRole']:
-                for organization_id in request.data['organizationRole']:
+            if request.data['organizationRoles']:
+                for organization_id in request.data['organizationRoles']:
                     new_organization = Organization.objects.get(
                         id=organization_id)
                     OrganizationRole.objects.create(
@@ -100,12 +83,13 @@ class RoleView(ViewSet):
         try:
             role = Role.objects.get(pk=pk)
             role.name = request.data["name"]
+            role.image = request.data["image"]
             role.description = request.data["description"]
             role.boss = request.data["boss"]
             role.equipment = equipment
 
             if request.data['organizationRoles']:
-                existing_orgainzation_roles = OrganizationRole.objects.all().filter(role=role)
+                existing_organization_roles = OrganizationRole.objects.all().filter(role=role)
                 for organization_role in existing_organization_roles:
                     organization_role.delete()
                 for organization_id in request.data['organizationRoles']:
@@ -190,7 +174,7 @@ class RoleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Role
-        fields = ('id', 'organizations', 'user', 'name', 'description', 'equipment', 'boss')
+        fields = ('id', 'organizations', 'user', 'name', 'image', 'description', 'equipment', 'boss')
         depth = 1
 
     def get_organizations(self, obj):
